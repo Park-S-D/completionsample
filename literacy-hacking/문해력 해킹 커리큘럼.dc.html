@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jua&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+html,body{margin:0;padding:0;background:#FFF8EC;word-break:keep-all}
+body{font-family:'Pretendard Variable',Pretendard,sans-serif}
+a{color:#2563EB;text-decoration:none}
+a:hover{color:#F59E0B}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(2deg)}}
+@keyframes wobble{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+</style>
+</helmet>
+
+<div style="font-family:'Pretendard Variable',Pretendard,sans-serif;color:#3B2E1E;overflow-x:hidden">
+
+  <!-- HERO -->
+  <header class="relative overflow-hidden" style="background:linear-gradient(180deg,#2B2E63 0%,#3D3F86 60%,#5B5ACB 100%)">
+    <div class="absolute rounded-full" style="width:420px;height:420px;background:radial-gradient(circle,#FFD84D55,transparent 70%);top:-120px;left:-120px"></div>
+    <div class="absolute rounded-full" style="width:360px;height:360px;background:radial-gradient(circle,#7CF5C955,transparent 70%);bottom:-100px;right:-80px"></div>
+    <div class="max-w-6xl mx-auto px-6 pt-16 pb-20 relative">
+      <div class="flex justify-center">
+        <div class="px-6 py-2 rounded-2xl text-lg font-bold text-center" style="background:#FFD84D;color:#3B2E1E;box-shadow:0 6px 0 #C9A227;font-family:Gaegu,cursive;font-size:22px;line-height:1.4;max-width:90%">초등 5학년을 위한 ‘문해력 해킹’ 시크릿 노트</div>
+      </div>
+      <h1 class="text-center text-white mt-8 leading-tight" style="font-family:Jua,sans-serif;font-size:clamp(34px,5vw,64px);text-shadow:0 6px 0 rgba(0,0,0,0.25)">글씨는 다 읽었는데,<br>왜 <span style="color:#FFD84D">무슨 뜻인지</span> 모를까?</h1>
+      <p class="text-center mt-5" style="color:#C9CBF5;font-family:Gaegu,cursive;font-size:28px">💡 비밀은 <span style="color:#7CF5C9;font-weight:700">논리</span>에 있다!</p>
+      <div class="mt-12 mx-auto max-w-3xl" style="perspective:1200px">
+        <sc-if value="{{ showVideo }}" hint-placeholder-val="{{ true }}">
+        <div class="rounded-3xl overflow-hidden" style="transform:rotateX(4deg);box-shadow:0 30px 60px rgba(0,0,0,0.45),0 0 0 8px rgba(255,255,255,0.12);background:#000">
+          <div style="position:relative;padding-top:56.25%">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLpuzWnAKjQgCWYjx1kuKHDnIo4Bd99E3n" title="EBS 당신의 문해력 (샘플 영상)" style="position:absolute;inset:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="text-center mt-4" style="color:#AEB1EC;font-size:16px">▲ 결과물 미리보기: EBS ‘당신의 문해력’ 샘플 영상 (교체 가능)</div>
+        </sc-if>
+      </div>
+    </div>
+    <div style="height:60px;background:#FFF8EC;clip-path:ellipse(60% 100% at 50% 100%)"></div>
+  </header>
+
+  <!-- PROBLEM -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center">
+      <div class="inline-block px-5 py-1.5 rounded-full font-bold text-white" style="background:#EF5350;font-size:18px;transform:rotate(-2deg)">문제 발견!</div>
+      <h2 class="mt-4" style="font-family:Jua,sans-serif;font-size:clamp(28px,4vw,48px);color:#2B2E63">교과서만 펴면 왜 길을 잃어버릴까?</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 mt-12" style="perspective:1400px">
+      <div class="bg-white rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2" style="box-shadow:0 20px 40px rgba(43,46,99,0.15);transform:rotateY(6deg) rotate(-1deg);border:3px dashed #FFB74D">
+        <div class="text-6xl text-center" style="animation:wobble 3s ease-in-out infinite">🧩</div>
+        <div class="text-center mt-4" style="font-family:Gaegu,cursive;font-size:30px;font-weight:700;color:#E65100">단어 뜻은 아는데<br>조립이 안 됨.</div>
+      </div>
+      <div class="bg-white rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2" style="box-shadow:0 20px 40px rgba(43,46,99,0.15);transform:rotateY(-6deg) rotate(1deg);border:3px dashed #64B5F6">
+        <div class="text-6xl text-center" style="animation:wobble 3.4s ease-in-out infinite">😵‍💫</div>
+        <div class="text-center mt-4" style="font-family:Gaegu,cursive;font-size:30px;font-weight:700;color:#1565C0">문장이 조금만<br>길어지면 멘붕.</div>
+      </div>
+    </div>
+    <div class="mt-12 mx-auto max-w-4xl rounded-3xl overflow-hidden" style="box-shadow:0 24px 48px rgba(43,46,99,0.2);transform:rotate(-0.5deg)">
+      <img src="edu/e02.png" alt="교과서만 펴면 왜 길을 잃어버릴까?" class="w-full block">
+    </div>
+    <p class="text-center mt-10" style="font-family:Jua,sans-serif;font-size:30px;color:#C62828">그냥 눈으로만 읽어서는 절대 탈출할 수 없어! 🚫</p>
+  </section>
+
+  <!-- META DRONE -->
+  <section style="background:#2B2E63">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="text-center">
+        <div class="inline-block px-5 py-1.5 rounded-full font-bold" style="background:#7CF5C9;color:#1B4332;font-size:18px;transform:rotate(2deg)">해결 열쇠 1</div>
+        <h2 class="mt-4 text-white" style="font-family:Jua,sans-serif;font-size:clamp(28px,4vw,48px)">어떻게 똑똑하게 읽을까? <span style="background:#7CF5C9;color:#1B4332;padding:0 14px;border-radius:12px">‘메타인지’</span> 드론을 띄워라!</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10 mt-12 items-center">
+        <div class="rounded-3xl overflow-hidden" style="box-shadow:0 30px 60px rgba(0,0,0,0.5);animation:floaty 5s ease-in-out infinite">
+          <img src="edu/e03.png" alt="메타인지 드론" class="w-full block">
+        </div>
+        <div class="flex flex-col gap-6">
+          <div class="rounded-2xl p-6" style="background:rgba(255,255,255,0.08);border:1px solid rgba(124,245,201,0.35)">
+            <div style="font-family:Gaegu,cursive;font-size:28px;font-weight:700;color:#7CF5C9">메타인지 = 글 밖에서 전체 지도를 내려다보는 힘!</div>
+          </div>
+          <div class="rounded-2xl p-6" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,216,77,0.35)">
+            <div style="font-family:Gaegu,cursive;font-size:28px;font-weight:700;color:#FFD84D">단어가 아니라 관계(연결고리)를 봐야 해!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRICULUM STEPS -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center">
+      <div class="inline-block px-5 py-1.5 rounded-full font-bold text-white" style="background:#5B5ACB;font-size:18px">8주 커리큘럼</div>
+      <h2 class="mt-4" style="font-family:Jua,sans-serif;font-size:clamp(28px,4vw,48px);color:#2B2E63">문해력 해킹, 스텝별로 정복하기</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 mt-14" style="perspective:1600px">
+      <sc-for list="{{ steps }}" as="step" hint-placeholder-count="8">
+        <div class="bg-white rounded-3xl overflow-hidden transition-transform duration-300 hover:-translate-y-3 hover:rotate-0" style="box-shadow:0 24px 48px rgba(43,46,99,0.16);transform:rotate({{ step.tilt }}deg);border-top:10px solid {{ step.color }}">
+          <div class="flex items-center gap-4 px-7 pt-6">
+            <div class="flex items-center justify-center rounded-2xl text-white font-extrabold" style="width:58px;height:58px;background:{{ step.color }};font-size:24px;box-shadow:0 6px 0 rgba(0,0,0,0.15)">{{ step.no }}</div>
+            <div>
+              <div style="font-family:Jua,sans-serif;font-size:26px;color:#2B2E63">{{ step.title }}</div>
+              <div style="font-family:Gaegu,cursive;font-size:21px;color:#8A7B63">{{ step.sub }}</div>
+            </div>
+          </div>
+          <div class="px-7 py-5" style="font-size:18px;line-height:1.6;color:#5D5140">{{ step.desc }}</div>
+          <sc-if value="{{ step.img }}" hint-placeholder-val="{{ false }}"><img src="{{ step.img }}" alt="{{ step.title }}" class="w-full block"></sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- TOOLBOX -->
+  <section style="background:linear-gradient(180deg,#FFF1D6,#FFE3B3)">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="text-center">
+        <div class="inline-block px-5 py-1.5 rounded-full font-bold text-white" style="background:#E65100;font-size:18px;transform:rotate(-2deg)">한눈에 정리</div>
+        <h2 class="mt-4" style="font-family:Jua,sans-serif;font-size:clamp(28px,4vw,48px);color:#4E342E">‘문해력 해킹’ 도구 상자 🧰</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+        <div class="bg-white rounded-2xl p-6 text-center transition-transform hover:-translate-y-2" style="box-shadow:0 14px 28px rgba(78,52,46,0.18);transform:rotate(-2deg)"><div class="text-5xl">📦</div><div class="mt-3" style="font-family:Jua,sans-serif;font-size:24px;color:#2B2E63">A ⊂ B</div><div style="font-family:Gaegu,cursive;font-size:22px;color:#E65100;font-weight:700">(쏙!)</div></div>
+        <div class="bg-white rounded-2xl p-6 text-center transition-transform hover:-translate-y-2" style="box-shadow:0 14px 28px rgba(78,52,46,0.18);transform:rotate(2deg)"><div class="text-5xl">⚖️</div><div class="mt-3" style="font-family:Jua,sans-serif;font-size:24px;color:#2B2E63">A = B</div><div style="font-family:Gaegu,cursive;font-size:22px;color:#E65100;font-weight:700">(거울!)</div></div>
+        <div class="bg-white rounded-2xl p-6 text-center transition-transform hover:-translate-y-2" style="box-shadow:0 14px 28px rgba(78,52,46,0.18);transform:rotate(-2deg)"><div class="text-5xl">⚡</div><div class="mt-3" style="font-family:Jua,sans-serif;font-size:24px;color:#2B2E63">A vs B</div><div style="font-family:Gaegu,cursive;font-size:22px;color:#E65100;font-weight:700">(벽!)</div></div>
+        <div class="bg-white rounded-2xl p-6 text-center transition-transform hover:-translate-y-2" style="box-shadow:0 14px 28px rgba(78,52,46,0.18);transform:rotate(2deg)"><div class="text-5xl">🫧</div><div class="mt-3" style="font-family:Jua,sans-serif;font-size:24px;color:#2B2E63">A ∩ B</div><div style="font-family:Gaegu,cursive;font-size:22px;color:#E65100;font-weight:700">(걸침!)</div></div>
+      </div>
+      <div class="mt-12 mx-auto max-w-4xl rounded-3xl overflow-hidden" style="box-shadow:0 24px 48px rgba(78,52,46,0.25);transform:rotate(0.5deg)">
+        <img src="edu/e11.png" alt="문해력 해킹 도구 상자" class="w-full block">
+      </div>
+      <p class="text-center mt-10" style="font-family:Jua,sans-serif;font-size:28px;color:#4E342E">이 4개의 도구만 있으면 어떤 복잡한 문장도 다 해체할 수 있어!</p>
+    </div>
+  </section>
+
+  <!-- BOSS -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center">
+      <div class="inline-block px-5 py-1.5 rounded-full font-bold text-white" style="background:#C62828;font-size:18px;transform:rotate(-2deg)">실전 보스전 👾</div>
+      <h2 class="mt-4" style="font-family:Jua,sans-serif;font-size:clamp(28px,4vw,48px);color:#2B2E63">다음 문장에서 숨겨진 관계를 찾아내라!</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 mt-12 items-center">
+      <div class="rounded-3xl overflow-hidden" style="box-shadow:0 24px 48px rgba(43,46,99,0.2);transform:rotate(-1deg)">
+        <img src="edu/e12.png" alt="실전 보스전" class="w-full block">
+      </div>
+      <div class="flex flex-col gap-5">
+        <div class="rounded-2xl p-6 bg-white" style="box-shadow:0 12px 24px rgba(43,46,99,0.12);border-left:none;border:3px solid #64B5F6">
+          <div style="font-family:Gaegu,cursive;font-size:26px;font-weight:700;color:#1565C0">비가 오면 땅이 젖는다. ✅ &nbsp;비(A) → 땅 젖음(B)</div>
+        </div>
+        <div class="rounded-2xl p-6 bg-white" style="box-shadow:0 12px 24px rgba(43,46,99,0.12);border:3px solid #EF5350">
+          <div style="font-family:Gaegu,cursive;font-size:26px;font-weight:700;color:#C62828">하지만 땅이 젖었다고 항상 비가 온 것은 아니다! &nbsp;땅 젖음(B) ❌→ 비(A)</div>
+        </div>
+        <div class="self-center px-8 py-3 rounded-full text-white" style="background:#C62828;font-family:Jua,sans-serif;font-size:26px;transform:rotate(-3deg);box-shadow:0 8px 0 #8E1B1B">MISSION CLEAR!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARROW GAME -->
+  <section style="background:#12244B">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <h2 class="text-center text-white" style="font-family:Jua,sans-serif;font-size:clamp(28px,4vw,46px)">결국 모든 글은 <span style="color:#FFD84D">‘A와 B의 화살표 놀이’</span>일 뿐이다!</h2>
+      <div class="mt-10 mx-auto max-w-5xl rounded-3xl overflow-hidden" style="box-shadow:0 30px 60px rgba(0,0,0,0.5)">
+        <img src="edu/e13.png" alt="A와 B의 화살표 놀이" class="w-full block">
+      </div>
+      <p class="text-center mt-8" style="font-family:Gaegu,cursive;font-size:27px;color:#FFD84D;font-weight:700">단어 하나하나에 쫄지 마! 단어들이 어떻게 손을 잡고 있는지 관계(화살표)만 찾으면 게임 끝!</p>
+    </div>
+  </section>
+
+  <!-- EFFECT (CHARTS) -->
+  <section class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center">
+      <div class="inline-block px-5 py-1.5 rounded-full font-bold text-white" style="background:#2E7D32;font-size:18px">교육 효과 📈</div>
+      <h2 class="mt-4" style="font-family:Jua,sans-serif;font-size:clamp(28px,4vw,48px);color:#2B2E63">논리 안경을 쓰면, 이렇게 달라져요!</h2>
+      <p class="mt-3" style="color:#8A7B63;font-size:17px">* 아래 수치는 커리큘럼 목표 기준 예시 데이터입니다.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 mt-12">
+      <div class="bg-white rounded-3xl p-7" style="box-shadow:0 20px 40px rgba(43,46,99,0.14)">
+        <div class="text-center" style="font-family:Jua,sans-serif;font-size:22px;color:#2B2E63">4대 논리 도구 역량</div>
+        <div style="height:280px;position:relative"><canvas id="chart-radar"></canvas></div>
+      </div>
+      <div class="bg-white rounded-3xl p-7" style="box-shadow:0 20px 40px rgba(43,46,99,0.14)">
+        <div class="text-center" style="font-family:Jua,sans-serif;font-size:22px;color:#2B2E63">학습 전 · 후 이해도</div>
+        <div style="height:280px;position:relative"><canvas id="chart-bar"></canvas></div>
+      </div>
+      <div class="bg-white rounded-3xl p-7" style="box-shadow:0 20px 40px rgba(43,46,99,0.14)">
+        <div class="text-center" style="font-family:Jua,sans-serif;font-size:22px;color:#2B2E63">8주 향상 곡선</div>
+        <div style="height:280px;position:relative"><canvas id="chart-line"></canvas></div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-6 mt-10 max-w-3xl mx-auto text-center">
+      <div class="rounded-2xl py-6" style="background:#2B2E63;color:#FFD84D"><div style="font-family:Jua,sans-serif;font-size:44px">+38%</div><div class="text-white" style="font-size:16px">문장 이해도</div></div>
+      <div class="rounded-2xl py-6" style="background:#2E7D32;color:#fff"><div style="font-family:Jua,sans-serif;font-size:44px">4개</div><div style="font-size:16px">논리 도구 마스터</div></div>
+      <div class="rounded-2xl py-6" style="background:#E65100;color:#fff"><div style="font-family:Jua,sans-serif;font-size:44px">8주</div><div style="font-size:16px">완성 커리큘럼</div></div>
+    </div>
+  </section>
+
+  <!-- FINALE -->
+  <section style="background:linear-gradient(180deg,#2B2E63,#12244B)">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <h2 class="text-center text-white" style="font-family:Jua,sans-serif;font-size:clamp(28px,4vw,48px)">자, 이제 너만의 <span style="color:#FFD84D">‘논리 안경’</span>을 끼고<br>교과서를 다시 펼쳐볼까?</h2>
+      <div class="mt-10 mx-auto max-w-4xl rounded-3xl overflow-hidden" style="box-shadow:0 30px 60px rgba(0,0,0,0.5);animation:floaty 6s ease-in-out infinite">
+        <img src="edu/e14.png" alt="논리 안경" class="w-full block">
+      </div>
+      <div class="flex justify-center mt-10">
+        <div class="px-10 py-4 rounded-full" style="background:#7CF5C9;color:#1B4332;font-family:Jua,sans-serif;font-size:30px;box-shadow:0 10px 0 #3BAF87;transform:rotate(-1deg)">✅ 메타 문해력 마스터 준비 완료!</div>
+      </div>
+      <p class="text-center mt-10 pb-4" style="color:#8B92C9;font-size:15px">초등 5학년 ‘문해력 해킹’ 시크릿 노트 · 교육 커리큘럼</p>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showVideo&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;표시 옵션&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showVideo: this.props.showVideo ?? true,
+      steps: [
+        { no: 'S1', tilt: -1, color: '#EF5350', img: 'edu/e04.png', title: '원인과 결과 연결하기', sub: '~하니까, ~해서 → ~로 되다!', desc: '원인(선)과 결과(후)는 어떻게 연결되어 있을까? 100% 예외 없음! 문장 속 도미노를 찾아라.' },
+        { no: 'S2', tilt: 1, color: '#42A5F5', img: 'edu/e05.png', title: '조건 찾기 (If - Then)', sub: '진짜로 필요한 조건은 누구일까?', desc: '비를 내리게 하려면(충분), 큰 구름 방어막이 반드시(필요) 있어야 해!' },
+        { no: 'S3', tilt: -1, color: '#AB47BC', img: 'edu/e06.png', title: '팩트와 내 생각 구분', sub: '사실명제 vs 가치명제', desc: '피라냐는 아마존에 사는 물고기다(증명 가능 ⭕). 피라냐는 너무 잔인하다(사람마다 다름 ❌). 둘을 섞은 문장에 속지 마!' },
+        { no: 'S4', tilt: 1, color: '#FF7043', img: 'edu/e07.png', title: '[논리 1] 함축 / 포함', sub: '누가 누구를 꿀꺽 삼키고 있을까?', desc: 'A라면 반드시 B이다. A가 B의 뱃속에 완전히 잡아먹힌 상태! (A ⊂ B)' },
+        { no: 'S5', tilt: -1, color: '#FFB300', img: 'edu/e08.png', title: '[논리 2] 동치 / 정의', sub: '이름만 다른 완벽한 쌍둥이는?', desc: '서울 = 대한민국의 수도. A와 B는 완전히 같은 의미! 서로 거울을 보고 있는 완벽한 짝꿍. (필요충분조건)' },
+        { no: 'S6', tilt: 1, color: '#26A69A', img: 'edu/e09.png', title: '[논리 3] 배제 / 모순', sub: '절대 같은 공간에 있을 수 없는 원수는?', desc: '동전의 앞면과 뒷면. 겹치는 부분이 단 1%도 없음! A라면 절대 B일 수 없다.' },
+        { no: 'S7', tilt: -1, color: '#7E57C2', img: 'edu/e10.png', title: '[논리 4] 교차', sub: '발만 살짝 걸치고 있는 관계는?', desc: '성인과 기혼자처럼 어떤 A는 B이다. 항상 그런 건 아님! \u2018어떤(일부)\u2019이라는 함정에 주의해!' },
+        { no: 'S8', tilt: 1, color: '#5B5ACB', img: 'edu/e01.png', title: '시크릿 노트 완성', sub: '비밀은 논리에 있다!', desc: '4개의 논리 도구를 모아 나만의 문해력 해킹 노트를 완성하고 실전 보스전에 도전!' }
+      ]
+    };
+  }
+  componentDidMount() {
+    this._tryCharts = (n) => {
+      if (!window.Chart) { if (n < 40) setTimeout(() => this._tryCharts(n + 1), 250); return; }
+      if (this._chartsDone) return;
+      const radar = document.getElementById('chart-radar');
+      const bar = document.getElementById('chart-bar');
+      const line = document.getElementById('chart-line');
+      if (!radar || !bar || !line) { if (n < 40) setTimeout(() => this._tryCharts(n + 1), 250); return; }
+      this._chartsDone = true;
+      const font = { family: "'Pretendard Variable', Pretendard, sans-serif", size: 13 };
+      new Chart(radar, { type: 'radar', data: { labels: ['포함(⊂)', '동치(=)', '배제(vs)', '교차(∩)', '메타인지'], datasets: [
+        { label: '학습 전', data: [35, 30, 32, 28, 30], backgroundColor: 'rgba(239,83,80,0.18)', borderColor: '#EF5350', pointBackgroundColor: '#EF5350' },
+        { label: '학습 후', data: [82, 78, 80, 74, 85], backgroundColor: 'rgba(91,90,203,0.22)', borderColor: '#5B5ACB', pointBackgroundColor: '#5B5ACB' }
+      ]}, options: { responsive: true, maintainAspectRatio: false, scales: { r: { min: 0, max: 100, ticks: { display: false }, pointLabels: { font } } }, plugins: { legend: { labels: { font } } } } });
+      new Chart(bar, { type: 'bar', data: { labels: ['짧은 문장', '긴 문장', '교과서 지문'], datasets: [
+        { label: '학습 전', data: [62, 38, 30], backgroundColor: '#FFB300', borderRadius: 10 },
+        { label: '학습 후', data: [95, 82, 76], backgroundColor: '#2E7D32', borderRadius: 10 }
+      ]}, options: { responsive: true, maintainAspectRatio: false, scales: { y: { min: 0, max: 100, ticks: { font } }, x: { ticks: { font } } }, plugins: { legend: { labels: { font } } } } });
+      new Chart(line, { type: 'line', data: { labels: ['1주', '2주', '3주', '4주', '5주', '6주', '7주', '8주'], datasets: [
+        { label: '문장 이해도', data: [32, 40, 48, 55, 62, 70, 78, 86], borderColor: '#5B5ACB', backgroundColor: 'rgba(91,90,203,0.15)', fill: true, tension: 0.35, pointRadius: 5, pointBackgroundColor: '#FFD84D', pointBorderColor: '#5B5ACB' }
+      ]}, options: { responsive: true, maintainAspectRatio: false, scales: { y: { min: 0, max: 100, ticks: { font } }, x: { ticks: { font } } }, plugins: { legend: { labels: { font } } } } });
+    };
+    this._tryCharts(0);
+  }
+}
+</script>
+</body>
+</html>
